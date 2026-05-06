@@ -118,20 +118,20 @@ print(f"Let's Get Cracking!")
 print(f'Welcome to the Lock Cracking Time Calculator')
 print(f"let's get started!")
 
-min_rings = int(input(f'Greater than or equal to 3 and less than 10 rings, what is the minimum number of rings on your lock?: '))
-while min_rings < 3 or min_rings >= 10:
+rings-min = int(input(f'Greater than or equal to 3 and less than 10 rings, what is the minimum number of rings on your lock?: '))
+while rings-min < 3 or rings-min >= 10:
     print(f'ERROR: Invalid input. Ensure your input is greater than or equal to 3 and less than 10 rings.')
-    min_rings = int(input(f'Greater than or equal to 3 and less than 10 rings, what is the minimum number of rings on your lock?: '))
+    rings-min = int(input(f'Greater than or equal to 3 and less than 10 rings, what is the minimum number of rings on your lock?: '))
 #print({min_rings})
-max_rings = int(input(f'Greater than or equal to {min_rings} and less than or equal to 10 rings, what is the maximum number of rings on your lock?: '))
-while max_rings < min_rings or max_rings > 10:
-    print(f'ERROR: Invalid Input. Ensure your input is Greater than or equal to {min_rings} and less than or equal to 10 rings')
-    max_rings = int(input(f'Greater than or equal to {min_rings} rings and less than or equal to 10 rings, what is the maximum number of rings on your lock?: '))
+rings-max = int(input(f'Greater than or equal to {rings-min} and less than or equal to 10 rings, what is the maximum number of rings on your lock?: '))
+while rings-max < rings-min or rings-max > 10:
+    print(f'ERROR: Invalid Input. Ensure your input is Greater than or equal to {rings-min} and less than or equal to 10 rings')
+    rings-max = int(input(f'Greater than or equal to {rings-min} rings and less than or equal to 10 rings, what is the maximum number of rings on your lock?: '))
 #print(max_rings)
 ArcosDA01 = open('ArcosDA01.txt', 'a')
-print(f'The minimum number of rings is {min_rings} and the maximum number of rings is {max_rings}.')
-ArcosDA01.write((f'The minimum number of rings is {min_rings} and the maximum number of rings is {max_rings}.\n'))
-for ring in range(min_rings, max_rings +1):
+print(f'The minimum number of rings is {rings-min} and the maximum number of rings is {rings-max}.')
+ArcosDA01.write((f'The minimum number of rings is {rings-min} and the maximum number of rings is {rings-max}.\n'))
+for ring in range(rings-min, rings-max +1):
     time = float(input(f'Greater than 0 and up to 10, how many seconds does it take to set a lock with {ring} rings?: '))
     while time <= 0 or time > 10:
         print(f'ERROR: Invalid input. Ensure your input is greater than 0 and up to 10 seconds.')
